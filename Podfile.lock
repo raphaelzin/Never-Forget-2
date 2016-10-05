@@ -1,0 +1,39 @@
+PODS:
+  - Eureka (1.7.0)
+  - FontAwesome.swift (0.11.1)
+  - Realm (1.1.0):
+    - Realm/Headers (= 1.1.0)
+  - Realm/Headers (1.1.0)
+  - RealmSwift (1.1.0):
+    - Realm (= 1.1.0)
+
+DEPENDENCIES:
+  - Eureka (from `https://github.com/xmartlabs/Eureka.git`, branch `Swift3`)
+  - FontAwesome.swift (from `https://github.com/thii/FontAwesome.swift`, tag `0.11.1`)
+  - RealmSwift
+
+EXTERNAL SOURCES:
+  Eureka:
+    :branch: Swift3
+    :git: https://github.com/xmartlabs/Eureka.git
+  FontAwesome.swift:
+    :git: https://github.com/thii/FontAwesome.swift
+    :tag: 0.11.1
+
+CHECKOUT OPTIONS:
+  Eureka:
+    :commit: c44c58817df804f08d2b612cc9444c1176c1e082
+    :git: https://github.com/xmartlabs/Eureka.git
+  FontAwesome.swift:
+    :git: https://github.com/thii/FontAwesome.swift
+    :tag: 0.11.1
+
+SPEC CHECKSUMS:
+  Eureka: 2020d9faeef7b7e9adeb9e3d8af779e5931c1897
+  FontAwesome.swift: 9879cd6a1462bf160662d519f7b7474d73bdd1c3
+  Realm: ceecf1a4540c4ce9efe196fe73fa9855bce05bd8
+  RealmSwift: 838058b2db95b12cb86bd0cf209df642c33fb60a
+
+PODFILE CHECKSUM: 4ebf5b416ca550f8b77898e9318bf5d3c93b6bac
+
+COCOAPODS: 1.1.0.rc.2

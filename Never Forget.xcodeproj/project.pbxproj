@@ -1,0 +1,817 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0FB894B0169E44540994AA8A /* Pods_Never_ForgetTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D61D86A5400059D9D2699718 /* Pods_Never_ForgetTests.framework */; };
+		1C0304371D9EC6A40062BEAB /* OperationInContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0304351D9EC6A30062BEAB /* OperationInContactTableViewCell.swift */; };
+		1C0304381D9EC6A40062BEAB /* OperationInContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C0304361D9EC6A30062BEAB /* OperationInContactTableViewCell.xib */; };
+		1C0F38341D917CD100791761 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0F38331D917CD100791761 /* AppDelegate.swift */; };
+		1C0F38361D917CD100791761 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0F38351D917CD100791761 /* ViewController.swift */; };
+		1C0F38391D917CD100791761 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C0F38371D917CD100791761 /* Main.storyboard */; };
+		1C0F383B1D917CD100791761 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C0F383A1D917CD100791761 /* Assets.xcassets */; };
+		1C0F383E1D917CD100791761 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C0F383C1D917CD100791761 /* LaunchScreen.storyboard */; };
+		1C0F38491D917CD200791761 /* Never_ForgetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0F38481D917CD200791761 /* Never_ForgetTests.swift */; };
+		1C0F38541D917CD200791761 /* Never_ForgetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0F38531D917CD200791761 /* Never_ForgetUITests.swift */; };
+		1C1F00FE1D9B029C00E88834 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1F00FD1D9B029C00E88834 /* DetailsViewController.swift */; };
+		1C1F01001D9BF65500E88834 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1F00FF1D9BF65500E88834 /* ContactsViewController.swift */; };
+		1C1F01031D9D609100E88834 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1F01011D9D609100E88834 /* ContactTableViewCell.swift */; };
+		1C1F01041D9D609100E88834 /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C1F01021D9D609100E88834 /* ContactTableViewCell.xib */; };
+		1C4EF7A61D98B98500DCEA80 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4EF7A51D98B98500DCEA80 /* ProfileViewController.swift */; };
+		1C7187D31DA5424800FD923C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C7187D21DA5424800FD923C /* CloudKit.framework */; };
+		1C89A8F41D9DA5A5005A897B /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C89A8F31D9DA5A5005A897B /* ContactDetailsViewController.swift */; };
+		1CAF951C1DA2A01500865B83 /* EditOperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAF951B1DA2A01500865B83 /* EditOperationViewController.swift */; };
+		1CCAB1A41D944B3D00F44F4B /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCAB1A31D944B3D00F44F4B /* Operation.swift */; };
+		1CCAB1A61D944FA500F44F4B /* AddOperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCAB1A51D944FA500F44F4B /* AddOperationViewController.swift */; };
+		1CCAB1A81D94624600F44F4B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCAB1A71D94624600F44F4B /* Colors.swift */; };
+		1CCAB1AB1D959E3300F44F4B /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCAB1AA1D959E3300F44F4B /* Contact.swift */; };
+		1CCAB1AD1D95B1C000F44F4B /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCAB1AC1D95B1C000F44F4B /* Database.swift */; };
+		1CD50F491D9184FB0080F9AB /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD50F481D9184FB0080F9AB /* Utils.swift */; };
+		1CD50F4B1D918C330080F9AB /* OperationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD50F4A1D918C330080F9AB /* OperationTableViewCell.swift */; };
+		903DC276D5B0EB3284B4A9A4 /* Pods_Never_ForgetUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 834B00E6E0FB5AE34E9B7B4D /* Pods_Never_ForgetUITests.framework */; };
+		C9A0401DBA3B4010793CD674 /* Pods_Never_Forget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA5B4C36AE807E2421FA505 /* Pods_Never_Forget.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1C0F38451D917CD200791761 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1C0F38281D917CD100791761 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1C0F382F1D917CD100791761;
+			remoteInfo = "Never Forget";
+		};
+		1C0F38501D917CD200791761 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1C0F38281D917CD100791761 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1C0F382F1D917CD100791761;
+			remoteInfo = "Never Forget";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1457D1981589587C097135BA /* Pods-Never Forget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Never Forget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Never Forget/Pods-Never Forget.release.xcconfig"; sourceTree = "<group>"; };
+		1C0304351D9EC6A30062BEAB /* OperationInContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationInContactTableViewCell.swift; sourceTree = "<group>"; };
+		1C0304361D9EC6A30062BEAB /* OperationInContactTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OperationInContactTableViewCell.xib; sourceTree = "<group>"; };
+		1C0F38301D917CD100791761 /* Never Forget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Never Forget.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C0F38331D917CD100791761 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1C0F38351D917CD100791761 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1C0F38381D917CD100791761 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1C0F383A1D917CD100791761 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1C0F383D1D917CD100791761 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1C0F383F1D917CD100791761 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C0F38441D917CD200791761 /* Never ForgetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Never ForgetTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C0F38481D917CD200791761 /* Never_ForgetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Never_ForgetTests.swift; sourceTree = "<group>"; };
+		1C0F384A1D917CD200791761 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C0F384F1D917CD200791761 /* Never ForgetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Never ForgetUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C0F38531D917CD200791761 /* Never_ForgetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Never_ForgetUITests.swift; sourceTree = "<group>"; };
+		1C0F38551D917CD200791761 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C1F00FD1D9B029C00E88834 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		1C1F00FF1D9BF65500E88834 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		1C1F01011D9D609100E88834 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		1C1F01021D9D609100E88834 /* ContactTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
+		1C4EF7A51D98B98500DCEA80 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		1C7187D11DA5420600FD923C /* Never Forget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Never Forget.entitlements"; sourceTree = "<group>"; };
+		1C7187D21DA5424800FD923C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		1C89A8F31D9DA5A5005A897B /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
+		1CAF951B1DA2A01500865B83 /* EditOperationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditOperationViewController.swift; sourceTree = "<group>"; };
+		1CCAB1A31D944B3D00F44F4B /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
+		1CCAB1A51D944FA500F44F4B /* AddOperationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOperationViewController.swift; sourceTree = "<group>"; };
+		1CCAB1A71D94624600F44F4B /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		1CCAB1AA1D959E3300F44F4B /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		1CCAB1AC1D95B1C000F44F4B /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		1CD50F481D9184FB0080F9AB /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		1CD50F4A1D918C330080F9AB /* OperationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationTableViewCell.swift; sourceTree = "<group>"; };
+		24649A3EC7972FB6D260A14C /* Pods-Never ForgetTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Never ForgetTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Never ForgetTests/Pods-Never ForgetTests.debug.xcconfig"; sourceTree = "<group>"; };
+		37589DF589E8AE55178E69BA /* Pods-Never Forget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Never Forget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Never Forget/Pods-Never Forget.debug.xcconfig"; sourceTree = "<group>"; };
+		55D698C2E198CEB098C95BC6 /* Pods-Never ForgetTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Never ForgetTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Never ForgetTests/Pods-Never ForgetTests.release.xcconfig"; sourceTree = "<group>"; };
+		834B00E6E0FB5AE34E9B7B4D /* Pods_Never_ForgetUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Never_ForgetUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A98F1637949AE73475443310 /* Pods-Never ForgetUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Never ForgetUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Never ForgetUITests/Pods-Never ForgetUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		ACA5B4C36AE807E2421FA505 /* Pods_Never_Forget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Never_Forget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D61D86A5400059D9D2699718 /* Pods_Never_ForgetTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Never_ForgetTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBBCD974755A5716F4C32352 /* Pods-Never ForgetUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Never ForgetUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Never ForgetUITests/Pods-Never ForgetUITests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1C0F382D1D917CD100791761 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9A0401DBA3B4010793CD674 /* Pods_Never_Forget.framework in Frameworks */,
+				1C7187D31DA5424800FD923C /* CloudKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C0F38411D917CD100791761 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FB894B0169E44540994AA8A /* Pods_Never_ForgetTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C0F384C1D917CD200791761 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				903DC276D5B0EB3284B4A9A4 /* Pods_Never_ForgetUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		17471C3606B55B290FFCA072 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1C7187D21DA5424800FD923C /* CloudKit.framework */,
+				ACA5B4C36AE807E2421FA505 /* Pods_Never_Forget.framework */,
+				D61D86A5400059D9D2699718 /* Pods_Never_ForgetTests.framework */,
+				834B00E6E0FB5AE34E9B7B4D /* Pods_Never_ForgetUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1C0F38271D917CD100791761 = {
+			isa = PBXGroup;
+			children = (
+				1C0F38321D917CD100791761 /* Never Forget */,
+				1C0F38471D917CD200791761 /* Never ForgetTests */,
+				1C0F38521D917CD200791761 /* Never ForgetUITests */,
+				1C0F38311D917CD100791761 /* Products */,
+				DDA2569ED0FC1A3DF53D4584 /* Pods */,
+				17471C3606B55B290FFCA072 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1C0F38311D917CD100791761 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1C0F38301D917CD100791761 /* Never Forget.app */,
+				1C0F38441D917CD200791761 /* Never ForgetTests.xctest */,
+				1C0F384F1D917CD200791761 /* Never ForgetUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1C0F38321D917CD100791761 /* Never Forget */ = {
+			isa = PBXGroup;
+			children = (
+				1C7187D11DA5420600FD923C /* Never Forget.entitlements */,
+				1CCAB1A21D9440F700F44F4B /* Models */,
+				1C0F38331D917CD100791761 /* AppDelegate.swift */,
+				1C0F38351D917CD100791761 /* ViewController.swift */,
+				1CCAB1A51D944FA500F44F4B /* AddOperationViewController.swift */,
+				1CD50F481D9184FB0080F9AB /* Utils.swift */,
+				1CCAB1A71D94624600F44F4B /* Colors.swift */,
+				1C1F00FF1D9BF65500E88834 /* ContactsViewController.swift */,
+				1C1F00FD1D9B029C00E88834 /* DetailsViewController.swift */,
+				1C4EF7A51D98B98500DCEA80 /* ProfileViewController.swift */,
+				1C0F38371D917CD100791761 /* Main.storyboard */,
+				1C89A8F31D9DA5A5005A897B /* ContactDetailsViewController.swift */,
+				1CAF951B1DA2A01500865B83 /* EditOperationViewController.swift */,
+				1C1F01011D9D609100E88834 /* ContactTableViewCell.swift */,
+				1C1F01021D9D609100E88834 /* ContactTableViewCell.xib */,
+				1C0304351D9EC6A30062BEAB /* OperationInContactTableViewCell.swift */,
+				1C0304361D9EC6A30062BEAB /* OperationInContactTableViewCell.xib */,
+				1C0F383A1D917CD100791761 /* Assets.xcassets */,
+				1C0F383C1D917CD100791761 /* LaunchScreen.storyboard */,
+				1C0F383F1D917CD100791761 /* Info.plist */,
+			);
+			path = "Never Forget";
+			sourceTree = "<group>";
+		};
+		1C0F38471D917CD200791761 /* Never ForgetTests */ = {
+			isa = PBXGroup;
+			children = (
+				1C0F38481D917CD200791761 /* Never_ForgetTests.swift */,
+				1C0F384A1D917CD200791761 /* Info.plist */,
+			);
+			path = "Never ForgetTests";
+			sourceTree = "<group>";
+		};
+		1C0F38521D917CD200791761 /* Never ForgetUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1C0F38531D917CD200791761 /* Never_ForgetUITests.swift */,
+				1C0F38551D917CD200791761 /* Info.plist */,
+			);
+			path = "Never ForgetUITests";
+			sourceTree = "<group>";
+		};
+		1CCAB1A21D9440F700F44F4B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1CD50F4A1D918C330080F9AB /* OperationTableViewCell.swift */,
+				1CCAB1A31D944B3D00F44F4B /* Operation.swift */,
+				1CCAB1AA1D959E3300F44F4B /* Contact.swift */,
+				1CCAB1AC1D95B1C000F44F4B /* Database.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		DDA2569ED0FC1A3DF53D4584 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				37589DF589E8AE55178E69BA /* Pods-Never Forget.debug.xcconfig */,
+				1457D1981589587C097135BA /* Pods-Never Forget.release.xcconfig */,
+				24649A3EC7972FB6D260A14C /* Pods-Never ForgetTests.debug.xcconfig */,
+				55D698C2E198CEB098C95BC6 /* Pods-Never ForgetTests.release.xcconfig */,
+				A98F1637949AE73475443310 /* Pods-Never ForgetUITests.debug.xcconfig */,
+				EBBCD974755A5716F4C32352 /* Pods-Never ForgetUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1C0F382F1D917CD100791761 /* Never Forget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C0F38581D917CD200791761 /* Build configuration list for PBXNativeTarget "Never Forget" */;
+			buildPhases = (
+				CD2B96901589A1970B025400 /* [CP] Check Pods Manifest.lock */,
+				1C0F382C1D917CD100791761 /* Sources */,
+				1C0F382D1D917CD100791761 /* Frameworks */,
+				1C0F382E1D917CD100791761 /* Resources */,
+				B8A72BDE1C6152BFC18B3973 /* [CP] Embed Pods Frameworks */,
+				26333AE96F240EB307B62E7E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Never Forget";
+			productName = "Never Forget";
+			productReference = 1C0F38301D917CD100791761 /* Never Forget.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1C0F38431D917CD100791761 /* Never ForgetTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C0F385B1D917CD200791761 /* Build configuration list for PBXNativeTarget "Never ForgetTests" */;
+			buildPhases = (
+				DED1E079D21372DBC3D7A843 /* [CP] Check Pods Manifest.lock */,
+				1C0F38401D917CD100791761 /* Sources */,
+				1C0F38411D917CD100791761 /* Frameworks */,
+				1C0F38421D917CD100791761 /* Resources */,
+				94CA8D05613EA3B00AC73A27 /* [CP] Embed Pods Frameworks */,
+				7058C878AC8A8B56EFED5B14 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1C0F38461D917CD200791761 /* PBXTargetDependency */,
+			);
+			name = "Never ForgetTests";
+			productName = "Never ForgetTests";
+			productReference = 1C0F38441D917CD200791761 /* Never ForgetTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1C0F384E1D917CD200791761 /* Never ForgetUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C0F385E1D917CD200791761 /* Build configuration list for PBXNativeTarget "Never ForgetUITests" */;
+			buildPhases = (
+				E5D772B1EB114305FB4A52EF /* [CP] Check Pods Manifest.lock */,
+				1C0F384B1D917CD200791761 /* Sources */,
+				1C0F384C1D917CD200791761 /* Frameworks */,
+				1C0F384D1D917CD200791761 /* Resources */,
+				08727FF439178BCF1D47D95E /* [CP] Embed Pods Frameworks */,
+				6B0D2AF6FA48EB520CD11910 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1C0F38511D917CD200791761 /* PBXTargetDependency */,
+			);
+			name = "Never ForgetUITests";
+			productName = "Never ForgetUITests";
+			productReference = 1C0F384F1D917CD200791761 /* Never ForgetUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1C0F38281D917CD100791761 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = com.raphael;
+				TargetAttributes = {
+					1C0F382F1D917CD100791761 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = PV4FQV4SXL;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
+					1C0F38431D917CD100791761 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1C0F382F1D917CD100791761;
+					};
+					1C0F384E1D917CD200791761 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1C0F382F1D917CD100791761;
+					};
+				};
+			};
+			buildConfigurationList = 1C0F382B1D917CD100791761 /* Build configuration list for PBXProject "Never Forget" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1C0F38271D917CD100791761;
+			productRefGroup = 1C0F38311D917CD100791761 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1C0F382F1D917CD100791761 /* Never Forget */,
+				1C0F38431D917CD100791761 /* Never ForgetTests */,
+				1C0F384E1D917CD200791761 /* Never ForgetUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1C0F382E1D917CD100791761 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C1F01041D9D609100E88834 /* ContactTableViewCell.xib in Resources */,
+				1C0F383E1D917CD100791761 /* LaunchScreen.storyboard in Resources */,
+				1C0304381D9EC6A40062BEAB /* OperationInContactTableViewCell.xib in Resources */,
+				1C0F383B1D917CD100791761 /* Assets.xcassets in Resources */,
+				1C0F38391D917CD100791761 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C0F38421D917CD100791761 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C0F384D1D917CD200791761 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		08727FF439178BCF1D47D95E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Never ForgetUITests/Pods-Never ForgetUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		26333AE96F240EB307B62E7E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Never Forget/Pods-Never Forget-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B0D2AF6FA48EB520CD11910 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Never ForgetUITests/Pods-Never ForgetUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7058C878AC8A8B56EFED5B14 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Never ForgetTests/Pods-Never ForgetTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94CA8D05613EA3B00AC73A27 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Never ForgetTests/Pods-Never ForgetTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8A72BDE1C6152BFC18B3973 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Never Forget/Pods-Never Forget-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD2B96901589A1970B025400 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DED1E079D21372DBC3D7A843 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E5D772B1EB114305FB4A52EF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1C0F382C1D917CD100791761 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C1F01031D9D609100E88834 /* ContactTableViewCell.swift in Sources */,
+				1C0F38361D917CD100791761 /* ViewController.swift in Sources */,
+				1C0F38341D917CD100791761 /* AppDelegate.swift in Sources */,
+				1C4EF7A61D98B98500DCEA80 /* ProfileViewController.swift in Sources */,
+				1C1F00FE1D9B029C00E88834 /* DetailsViewController.swift in Sources */,
+				1C0304371D9EC6A40062BEAB /* OperationInContactTableViewCell.swift in Sources */,
+				1CAF951C1DA2A01500865B83 /* EditOperationViewController.swift in Sources */,
+				1CCAB1A61D944FA500F44F4B /* AddOperationViewController.swift in Sources */,
+				1C1F01001D9BF65500E88834 /* ContactsViewController.swift in Sources */,
+				1CCAB1A81D94624600F44F4B /* Colors.swift in Sources */,
+				1C89A8F41D9DA5A5005A897B /* ContactDetailsViewController.swift in Sources */,
+				1CCAB1AB1D959E3300F44F4B /* Contact.swift in Sources */,
+				1CD50F491D9184FB0080F9AB /* Utils.swift in Sources */,
+				1CCAB1AD1D95B1C000F44F4B /* Database.swift in Sources */,
+				1CCAB1A41D944B3D00F44F4B /* Operation.swift in Sources */,
+				1CD50F4B1D918C330080F9AB /* OperationTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C0F38401D917CD100791761 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C0F38491D917CD200791761 /* Never_ForgetTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C0F384B1D917CD200791761 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C0F38541D917CD200791761 /* Never_ForgetUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1C0F38461D917CD200791761 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1C0F382F1D917CD100791761 /* Never Forget */;
+			targetProxy = 1C0F38451D917CD200791761 /* PBXContainerItemProxy */;
+		};
+		1C0F38511D917CD200791761 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1C0F382F1D917CD100791761 /* Never Forget */;
+			targetProxy = 1C0F38501D917CD200791761 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1C0F38371D917CD100791761 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1C0F38381D917CD100791761 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1C0F383C1D917CD100791761 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1C0F383D1D917CD100791761 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1C0F38561D917CD200791761 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1C0F38571D917CD200791761 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1C0F38591D917CD200791761 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37589DF589E8AE55178E69BA /* Pods-Never Forget.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Never Forget/Never Forget.entitlements";
+				DEVELOPMENT_TEAM = PV4FQV4SXL;
+				INFOPLIST_FILE = "Never Forget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Never-Forget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		1C0F385A1D917CD200791761 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1457D1981589587C097135BA /* Pods-Never Forget.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Never Forget/Never Forget.entitlements";
+				DEVELOPMENT_TEAM = PV4FQV4SXL;
+				INFOPLIST_FILE = "Never Forget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Never-Forget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		1C0F385C1D917CD200791761 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24649A3EC7972FB6D260A14C /* Pods-Never ForgetTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Never ForgetTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.raphael.Never-ForgetTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Never Forget.app/Never Forget";
+			};
+			name = Debug;
+		};
+		1C0F385D1D917CD200791761 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55D698C2E198CEB098C95BC6 /* Pods-Never ForgetTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Never ForgetTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.raphael.Never-ForgetTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Never Forget.app/Never Forget";
+			};
+			name = Release;
+		};
+		1C0F385F1D917CD200791761 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A98F1637949AE73475443310 /* Pods-Never ForgetUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "Never ForgetUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.raphael.Never-ForgetUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Never Forget";
+			};
+			name = Debug;
+		};
+		1C0F38601D917CD200791761 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBBCD974755A5716F4C32352 /* Pods-Never ForgetUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "Never ForgetUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.raphael.Never-ForgetUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Never Forget";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1C0F382B1D917CD100791761 /* Build configuration list for PBXProject "Never Forget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C0F38561D917CD200791761 /* Debug */,
+				1C0F38571D917CD200791761 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1C0F38581D917CD200791761 /* Build configuration list for PBXNativeTarget "Never Forget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C0F38591D917CD200791761 /* Debug */,
+				1C0F385A1D917CD200791761 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1C0F385B1D917CD200791761 /* Build configuration list for PBXNativeTarget "Never ForgetTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C0F385C1D917CD200791761 /* Debug */,
+				1C0F385D1D917CD200791761 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1C0F385E1D917CD200791761 /* Build configuration list for PBXNativeTarget "Never ForgetUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C0F385F1D917CD200791761 /* Debug */,
+				1C0F38601D917CD200791761 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1C0F38281D917CD100791761 /* Project object */;
+}

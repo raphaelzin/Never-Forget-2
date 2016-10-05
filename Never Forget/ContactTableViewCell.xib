@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="KGk-i7-Jjw" customClass="ContactTableViewCell" customModule="Never_Forget" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <frame key="frameInset" width="320" height="74.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hd2-HZ-ShC">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="58" id="OFr-Ka-6Oi"/>
+                            <constraint firstAttribute="width" constant="58" id="kvf-Yf-ont"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auD-pv-RYt">
+                        <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="22"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ir-Vh-q1x">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="CmR-qx-9l2"/>
+                            <constraint firstAttribute="width" constant="65" id="aqZ-rx-xnM"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rrd-F3-r7t">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="SpV-Il-dFA"/>
+                            <constraint firstAttribute="width" constant="65" id="ca5-SB-aKs"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="hd2-HZ-ShC" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="8DP-nJ-szn"/>
+                    <constraint firstItem="auD-pv-RYt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="8qQ-wG-soC"/>
+                    <constraint firstItem="Rrd-F3-r7t" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" constant="-7.5" id="Gcv-pr-NqO"/>
+                    <constraint firstItem="auD-pv-RYt" firstAttribute="leading" secondItem="hd2-HZ-ShC" secondAttribute="trailing" constant="8" id="Njl-Tp-qKX"/>
+                    <constraint firstItem="Rrd-F3-r7t" firstAttribute="leading" secondItem="auD-pv-RYt" secondAttribute="trailing" constant="8" id="TcN-YZ-uN9"/>
+                    <constraint firstItem="2Ir-Vh-q1x" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="fNo-lf-6y0"/>
+                    <constraint firstItem="2Ir-Vh-q1x" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="i35-Cq-RJ6"/>
+                    <constraint firstItem="hd2-HZ-ShC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="jZa-P9-eH5"/>
+                    <constraint firstItem="Rrd-F3-r7t" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="k6c-29-aLe"/>
+                    <constraint firstItem="auD-pv-RYt" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="lig-VM-CEg"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="borrowLabel" destination="Rrd-F3-r7t" id="LZr-JX-Qy1"/>
+                <outlet property="contactName" destination="auD-pv-RYt" id="sG4-WB-Qto"/>
+                <outlet property="contactPicture" destination="hd2-HZ-ShC" id="ujq-94-2Hy"/>
+                <outlet property="lentLabel" destination="2Ir-Vh-q1x" id="FA5-rc-gNT"/>
+            </connections>
+            <point key="canvasLocation" x="-94" y="79.5"/>
+        </tableViewCell>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
+</document>
