@@ -23,6 +23,7 @@
 		1C1F01041D9D609100E88834 /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C1F01021D9D609100E88834 /* ContactTableViewCell.xib */; };
 		1C4EF7A61D98B98500DCEA80 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4EF7A51D98B98500DCEA80 /* ProfileViewController.swift */; };
 		1C7187D31DA5424800FD923C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C7187D21DA5424800FD923C /* CloudKit.framework */; };
+		1C7187D51DA5714100FD923C /* SlideUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7187D41DA5714100FD923C /* SlideUp.swift */; };
 		1C89A8F41D9DA5A5005A897B /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C89A8F31D9DA5A5005A897B /* ContactDetailsViewController.swift */; };
 		1CAF951C1DA2A01500865B83 /* EditOperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAF951B1DA2A01500865B83 /* EditOperationViewController.swift */; };
 		1CCAB1A41D944B3D00F44F4B /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCAB1A31D944B3D00F44F4B /* Operation.swift */; };
@@ -77,6 +78,7 @@
 		1C4EF7A51D98B98500DCEA80 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1C7187D11DA5420600FD923C /* Never Forget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Never Forget.entitlements"; sourceTree = "<group>"; };
 		1C7187D21DA5424800FD923C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		1C7187D41DA5714100FD923C /* SlideUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideUp.swift; sourceTree = "<group>"; };
 		1C89A8F31D9DA5A5005A897B /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
 		1CAF951B1DA2A01500865B83 /* EditOperationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditOperationViewController.swift; sourceTree = "<group>"; };
 		1CCAB1A31D944B3D00F44F4B /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				1C89A8F31D9DA5A5005A897B /* ContactDetailsViewController.swift */,
 				1CAF951B1DA2A01500865B83 /* EditOperationViewController.swift */,
 				1C1F01011D9D609100E88834 /* ContactTableViewCell.swift */,
+				1C7187D41DA5714100FD923C /* SlideUp.swift */,
 				1C1F01021D9D609100E88834 /* ContactTableViewCell.xib */,
 				1C0304351D9EC6A30062BEAB /* OperationInContactTableViewCell.swift */,
 				1C0304361D9EC6A30062BEAB /* OperationInContactTableViewCell.xib */,
@@ -534,6 +537,7 @@
 				1CD50F491D9184FB0080F9AB /* Utils.swift in Sources */,
 				1CCAB1AD1D95B1C000F44F4B /* Database.swift in Sources */,
 				1CCAB1A41D944B3D00F44F4B /* Operation.swift in Sources */,
+				1C7187D51DA5714100FD923C /* SlideUp.swift in Sources */,
 				1CD50F4B1D918C330080F9AB /* OperationTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

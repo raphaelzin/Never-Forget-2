@@ -10,7 +10,7 @@ import FontAwesome_swift
 import Eureka
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate {
 
     @IBOutlet var tableView: UITableView!
     @IBOutlet var addButton: UIButton!
@@ -18,6 +18,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var noOperations:UILabel!
     
     let db:Database = Database()
+    
+    let customNavigationAnimationController = SlideUp()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +46,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         tableView.contentInset = UIEdgeInsetsMake(0, 0, 50, 0)
         
+        navigationController?.delegate = self
         let attributes = [NSFontAttributeName: UIFont.fontAwesomeOfSize(24)] as Dictionary!
         navigationItem.leftBarButtonItem = UIBarButtonItem(title:String.fontAwesomeIconWithName(FontAwesome.Gear), style: .plain, target: self, action: #selector(ViewController.settings))
         
@@ -68,10 +71,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let toViewController = segue.destination
+        
         if segue.identifier == "details"
         {
             let details = segue.destination as! DetailsViewController
             details.op = sender as! Operation
+        }
+        if segue.identifier == "addOperation"
+        {
+            let slideUp = SlideUp()
+            toViewController.transitioningDelegate = slideUp
         }
     }
     
@@ -104,6 +114,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        customNavigationAnimationController.reverse = operation == .pop
+        
+        return customNavigationAnimationController
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -217,8 +233,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 34))
         headerView.backgroundColor = .white
         header.backgroundView = headerView
-        header.backgroundColor = .white
-        
         
         if let textlabel = header.textLabel {
             textlabel.font = UIFont(name: "AvenirNextCondensed-DemiBold", size: 22)
@@ -253,4 +267,3 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
 }
-
