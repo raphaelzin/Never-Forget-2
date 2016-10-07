@@ -26,6 +26,7 @@
 		1C7187D51DA5714100FD923C /* SlideUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7187D41DA5714100FD923C /* SlideUp.swift */; };
 		1C89A8F41D9DA5A5005A897B /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C89A8F31D9DA5A5005A897B /* ContactDetailsViewController.swift */; };
 		1CAF951C1DA2A01500865B83 /* EditOperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAF951B1DA2A01500865B83 /* EditOperationViewController.swift */; };
+		1CC122231DA7CF3D009AE9A6 /* CustomInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC122221DA7CF3D009AE9A6 /* CustomInteractionController.swift */; };
 		1CCAB1A41D944B3D00F44F4B /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCAB1A31D944B3D00F44F4B /* Operation.swift */; };
 		1CCAB1A61D944FA500F44F4B /* AddOperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCAB1A51D944FA500F44F4B /* AddOperationViewController.swift */; };
 		1CCAB1A81D94624600F44F4B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCAB1A71D94624600F44F4B /* Colors.swift */; };
@@ -81,6 +82,7 @@
 		1C7187D41DA5714100FD923C /* SlideUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideUp.swift; sourceTree = "<group>"; };
 		1C89A8F31D9DA5A5005A897B /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
 		1CAF951B1DA2A01500865B83 /* EditOperationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditOperationViewController.swift; sourceTree = "<group>"; };
+		1CC122221DA7CF3D009AE9A6 /* CustomInteractionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInteractionController.swift; sourceTree = "<group>"; };
 		1CCAB1A31D944B3D00F44F4B /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		1CCAB1A51D944FA500F44F4B /* AddOperationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOperationViewController.swift; sourceTree = "<group>"; };
 		1CCAB1A71D94624600F44F4B /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -164,8 +166,9 @@
 			isa = PBXGroup;
 			children = (
 				1C7187D11DA5420600FD923C /* Never Forget.entitlements */,
-				1CCAB1A21D9440F700F44F4B /* Models */,
 				1C0F38331D917CD100791761 /* AppDelegate.swift */,
+				1CCAB1A21D9440F700F44F4B /* Models */,
+				1CC122241DA7EDEB009AE9A6 /* Transition */,
 				1C0F38351D917CD100791761 /* ViewController.swift */,
 				1CCAB1A51D944FA500F44F4B /* AddOperationViewController.swift */,
 				1CD50F481D9184FB0080F9AB /* Utils.swift */,
@@ -177,7 +180,6 @@
 				1C89A8F31D9DA5A5005A897B /* ContactDetailsViewController.swift */,
 				1CAF951B1DA2A01500865B83 /* EditOperationViewController.swift */,
 				1C1F01011D9D609100E88834 /* ContactTableViewCell.swift */,
-				1C7187D41DA5714100FD923C /* SlideUp.swift */,
 				1C1F01021D9D609100E88834 /* ContactTableViewCell.xib */,
 				1C0304351D9EC6A30062BEAB /* OperationInContactTableViewCell.swift */,
 				1C0304361D9EC6A30062BEAB /* OperationInContactTableViewCell.xib */,
@@ -204,6 +206,15 @@
 				1C0F38551D917CD200791761 /* Info.plist */,
 			);
 			path = "Never ForgetUITests";
+			sourceTree = "<group>";
+		};
+		1CC122241DA7EDEB009AE9A6 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				1C7187D41DA5714100FD923C /* SlideUp.swift */,
+				1CC122221DA7CF3D009AE9A6 /* CustomInteractionController.swift */,
+			);
+			name = Transition;
 			sourceTree = "<group>";
 		};
 		1CCAB1A21D9440F700F44F4B /* Models */ = {
@@ -525,6 +536,7 @@
 				1C1F01031D9D609100E88834 /* ContactTableViewCell.swift in Sources */,
 				1C0F38361D917CD100791761 /* ViewController.swift in Sources */,
 				1C0F38341D917CD100791761 /* AppDelegate.swift in Sources */,
+				1CC122231DA7CF3D009AE9A6 /* CustomInteractionController.swift in Sources */,
 				1C4EF7A61D98B98500DCEA80 /* ProfileViewController.swift in Sources */,
 				1C1F00FE1D9B029C00E88834 /* DetailsViewController.swift in Sources */,
 				1C0304371D9EC6A40062BEAB /* OperationInContactTableViewCell.swift in Sources */,

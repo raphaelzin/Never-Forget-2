@@ -11,6 +11,7 @@ import UIKit
 class SlideUp: NSObject,UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
 
     var reverse: Bool = false
+    let duration = 0.6
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return self
@@ -20,7 +21,6 @@ class SlideUp: NSObject,UIViewControllerAnimatedTransitioning, UIViewControllerT
         return self
     }
     
-    let duration = 0.6
     func transitionDuration(using transitionContext:
         UIViewControllerContextTransitioning?) -> TimeInterval {
         return duration
@@ -49,6 +49,7 @@ class SlideUp: NSObject,UIViewControllerAnimatedTransitioning, UIViewControllerT
                 fromView.alpha = 1
                 toView.transform = CGAffineTransform.identity
             }, completion: { finished in
-                transitionContext.completeTransition(true)
+                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+                print("Finished")
         }) }
 }

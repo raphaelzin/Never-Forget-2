@@ -10,7 +10,13 @@ import FontAwesome_swift
 import Eureka
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UIViewControllerInteractiveTransitioning {
+    
+    
+    public func startInteractiveTransition(_ transitionContext: UIViewControllerContextTransitioning) {
+        return
+    }
+
 
     @IBOutlet var tableView: UITableView!
     @IBOutlet var addButton: UIButton!
@@ -18,7 +24,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var noOperations:UILabel!
     
     let db:Database = Database()
-    
+
+    let customInteractionController = CustomInteractionController()
     let customNavigationAnimationController = SlideUp()
     
     override func viewDidLoad() {
@@ -116,7 +123,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.didReceiveMemoryWarning()
     }
 
+    
+    
+    
+    func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return customInteractionController.transitionInProgress ? customInteractionController : nil
+    }
+    
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        if operation == .push {
+            customInteractionController.attachToViewController(viewController: toVC)
+        }
+        
         customNavigationAnimationController.reverse = operation == .pop
         
         return customNavigationAnimationController
