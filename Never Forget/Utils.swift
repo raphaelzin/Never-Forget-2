@@ -31,6 +31,23 @@ public extension UIFont
 
 class Utils
 {
+    static func scheduleNotification(operation:Operation)
+    {
+        if operation.notifyAt!.timeIntervalSinceNow < 0 { return }
+        let center = UNUserNotificationCenter.current()
+        center.removePendingNotificationRequests(withIdentifiers: [operation.createdAt.description])
+        let content = UNMutableNotificationContent()
+        content.title = "Never forget"
+        content.body = (operation.isDebt) ? "Remember that money you borrow!" : "Remember that money you lent!"
+        content.categoryIdentifier = operation.notifyAt!.description
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: operation.notifyAt!.timeIntervalSinceNow, repeats: false)
+        let request = UNNotificationRequest(
+            identifier: operation.createdAt.description, content: content, trigger: trigger
+        )
+        
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    }
+    
     static func defaultGradient(frame:CGRect)->CAGradientLayer
     {
         let gradient: CAGradientLayer = CAGradientLayer()

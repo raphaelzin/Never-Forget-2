@@ -90,19 +90,10 @@ class ContactDetailsViewController: UIViewController, UITableViewDelegate, UITab
             
             if !(alertController.textFields?[0].text?.isEmpty)!
             {
-                do
-                {
-                    try uiRealm.write { () -> Void in
-                        self.contact.name = (alertController.textFields?[0].text!)!
-                    }
-                }catch
-                {
-                    print("Could not save Operation")
-                }
+                self.db.setContactName(contact: self.contact, name: (alertController.textFields?[0].text!)!)
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reloadTable"), object: nil)
                 self.nameButton.setTitle((alertController.textFields?[0].text!)!, for: .normal)
                 print("Name Set")
-                
             }
         }
         

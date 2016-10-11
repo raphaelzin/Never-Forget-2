@@ -34,6 +34,7 @@
 		1CCAB1AD1D95B1C000F44F4B /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCAB1AC1D95B1C000F44F4B /* Database.swift */; };
 		1CD50F491D9184FB0080F9AB /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD50F481D9184FB0080F9AB /* Utils.swift */; };
 		1CD50F4B1D918C330080F9AB /* OperationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD50F4A1D918C330080F9AB /* OperationTableViewCell.swift */; };
+		1CE527891DAD31E4007138DB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE527881DAD31E4007138DB /* User.swift */; };
 		903DC276D5B0EB3284B4A9A4 /* Pods_Never_ForgetUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 834B00E6E0FB5AE34E9B7B4D /* Pods_Never_ForgetUITests.framework */; };
 		C9A0401DBA3B4010793CD674 /* Pods_Never_Forget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA5B4C36AE807E2421FA505 /* Pods_Never_Forget.framework */; };
 /* End PBXBuildFile section */
@@ -90,6 +91,7 @@
 		1CCAB1AC1D95B1C000F44F4B /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		1CD50F481D9184FB0080F9AB /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		1CD50F4A1D918C330080F9AB /* OperationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationTableViewCell.swift; sourceTree = "<group>"; };
+		1CE527881DAD31E4007138DB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		24649A3EC7972FB6D260A14C /* Pods-Never ForgetTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Never ForgetTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Never ForgetTests/Pods-Never ForgetTests.debug.xcconfig"; sourceTree = "<group>"; };
 		37589DF589E8AE55178E69BA /* Pods-Never Forget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Never Forget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Never Forget/Pods-Never Forget.debug.xcconfig"; sourceTree = "<group>"; };
 		55D698C2E198CEB098C95BC6 /* Pods-Never ForgetTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Never ForgetTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Never ForgetTests/Pods-Never ForgetTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				1CCAB1A31D944B3D00F44F4B /* Operation.swift */,
 				1CCAB1AA1D959E3300F44F4B /* Contact.swift */,
 				1CCAB1AC1D95B1C000F44F4B /* Database.swift */,
+				1CE527881DAD31E4007138DB /* User.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				1CCAB1A41D944B3D00F44F4B /* Operation.swift in Sources */,
 				1C7187D51DA5714100FD923C /* SlideUp.swift in Sources */,
 				1CD50F4B1D918C330080F9AB /* OperationTableViewCell.swift in Sources */,
+				1CE527891DAD31E4007138DB /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

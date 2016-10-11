@@ -12,7 +12,7 @@ import FontAwesome_swift
 import UserNotifications
 
 class AddOperationViewController: FormViewController {
-
+    
     @IBOutlet var saveButton: UIButton!
     let db = Database()
     var op:Operation!
@@ -87,15 +87,15 @@ class AddOperationViewController: FormViewController {
             <<< SwitchRow("switchReminder")
             {
                 $0.title = "Remind Me"
-            }.cellSetup{ cell, row in
-                cell.backgroundColor = .clear
-                cell.textLabel?.font = UIFont(name: "AvenirNextCondensed-DemiBold", size: (cell.textLabel?.font.pointSize)!+5)
-            }.cellUpdate{cell, row in
-                cell.switchControl?.onTintColor = Colors.light
-                cell.switchControl?.isOn = false
-                cell.textLabel?.textColor = .white
-                cell.detailTextLabel?.font = UIFont(name: "AvenirNextCondensed-DemiBold", size: (cell.textLabel?.font.pointSize)!)
-                cell.detailTextLabel?.textColor = Colors.light
+                }.cellSetup{ cell, row in
+                    cell.backgroundColor = .clear
+                    cell.textLabel?.font = UIFont(name: "AvenirNextCondensed-DemiBold", size: (cell.textLabel?.font.pointSize)!+5)
+                }.cellUpdate{cell, row in
+                    cell.switchControl?.onTintColor = Colors.light
+                    cell.switchControl?.isOn = false
+                    cell.textLabel?.textColor = .white
+                    cell.detailTextLabel?.font = UIFont(name: "AvenirNextCondensed-DemiBold", size: (cell.textLabel?.font.pointSize)!)
+                    cell.detailTextLabel?.textColor = Colors.light
             }
             
             <<< DateRow("reminder"){
@@ -118,20 +118,20 @@ class AddOperationViewController: FormViewController {
                     cell.detailTextLabel?.textColor = Colors.light
                     cell.detailTextLabel?.text = Utils.getFormatedTime(date: cell.datePicker.date)
             }
-        
+            
             <<< SegmentedRow<String>("borrow")
-                {
-                    $0.options = ["I Lent", "I Borrow"]
-                    $0.value = "I Lent"
+            {
+                $0.options = ["I Lent", "I Borrow"]
+                $0.value = "I Lent"
                 }.cellSetup{ cell, row in
                     cell.backgroundColor = .clear
                 }.cellUpdate{cell, row in
                     cell.segmentedControl.tintColor = .white
-            }
+        }
         
- 
+        
         let gradient: CAGradientLayer = CAGradientLayer()
- 
+        
         gradient.colors = [Colors.dark.cgColor,Colors.light.cgColor]
         gradient.locations = [0.0 , 1.0]
         
@@ -155,7 +155,7 @@ class AddOperationViewController: FormViewController {
         saveButton.superview?.bringSubview(toFront: saveButton)
     }
     
-
+    
     @IBAction func saveAction(_ sender: AnyObject)
     {
         let values = form.values()
@@ -188,8 +188,9 @@ class AddOperationViewController: FormViewController {
         
         if values["switchReminder"]! != nil && (values["switchReminder"]! as! Bool) == true
         {
-            scheduleNotification(when: values["reminder"] as! NSDate)
+            
             op.notifyAt = values["reminder"] as? NSDate
+            Utils.scheduleNotification(operation: op)
         }
         
         print(values["name"] as! String)
@@ -212,22 +213,6 @@ class AddOperationViewController: FormViewController {
         
         db.addOperation(newOperation: op)
         _ = navigationController?.popViewController(animated: true)
-    }
-    
-    
-    func scheduleNotification(when:NSDate)
-    {
-        let content = UNMutableNotificationContent()
-        content.title = "Never forget"
-        content.body = (op.isDebt) ? "Remember that money you borrow!" : "Remember that money you lent!"
-        content.categoryIdentifier = when.description
-        
-        print("Trigger in \(when.timeIntervalSinceNow)s")
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: when.timeIntervalSinceNow, repeats: false)
-        let request = UNNotificationRequest(
-            identifier: op.createdAt.description, content: content, trigger: trigger
-        )
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
     
     override func didReceiveMemoryWarning() {

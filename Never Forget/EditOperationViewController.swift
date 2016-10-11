@@ -21,7 +21,7 @@ class EditOperationViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Edit"
-
+        
         self.tableView?.separatorColor = .clear
         tableView?.contentInset = UIEdgeInsetsMake(-36, 0, 0, 0)
         let contact = db.getContactForID(id: op.hisID)
@@ -54,7 +54,7 @@ class EditOperationViewController: FormViewController {
                     cell.textLabel?.textColor = .white
                     cell.textField.font = UIFont(name: "AvenirNextCondensed-DemiBold", size: (cell.textLabel?.font.pointSize)!)
                     cell.textField.textColor = Colors.light
-                }
+            }
             
             <<< TextRow("details"){ row in
                 row.title = "Details"
@@ -143,7 +143,7 @@ class EditOperationViewController: FormViewController {
         self.view.layer.insertSublayer(gradient, at: 0)
         
         tableView?.backgroundColor = .clear
-
+        
         saveButton.backgroundColor = .white
         saveButton.titleLabel?.font = UIFont(name: "AvenirNextCondensed-DemiBold", size: 24)
         saveButton.setTitle("Save", for: .normal)
@@ -174,7 +174,7 @@ class EditOperationViewController: FormViewController {
             present(alertController, animated: true, completion: nil)
             return
         }
-
+        
         let opSave = Operation()
         opSave.amount = values["amount"]! as! Double
         opSave.details = values["details"] as! String
@@ -183,8 +183,8 @@ class EditOperationViewController: FormViewController {
         
         if values["switchReminder"]! != nil && (values["switchReminder"]! as! Bool) == true
         {
-            scheduleNotification(when: values["reminder"] as! NSDate)
             opSave.notifyAt = values["reminder"] as? NSDate
+            Utils.scheduleNotification(operation:opSave)
         }
         
         let name = (values["name"] as! String).trimmingCharacters(in: .whitespaces)
@@ -203,19 +203,8 @@ class EditOperationViewController: FormViewController {
             let contact = db.getContactByName(name: name)
             opSave.hisID = (contact?.id)!
         }
-        do
-        {
-            try uiRealm.write { () -> Void in
-                op.amount = opSave.amount
-                op.hisID = opSave.hisID
-                op.details = opSave.details
-                op.notifyAt = opSave.notifyAt
-                op.isDebt = opSave.isDebt
-            }
-        }catch
-        {
-            print("Could not update Operation")
-        }
+        
+        db.editOperation(operation: op, editTo: opSave)
         
         let notificationName = Notification.Name("tableReload")
         NotificationCenter.default.post(name: notificationName, object: nil)
@@ -224,24 +213,9 @@ class EditOperationViewController: FormViewController {
     }
     
     
-    func scheduleNotification(when:NSDate)
-    {
-        if when.timeIntervalSinceNow < 0 { return }
-        let center = UNUserNotificationCenter.current()
-        center.removePendingNotificationRequests(withIdentifiers: [op.createdAt.description])
-        let content = UNMutableNotificationContent()
-        content.title = "Never forget"
-        content.body = (op.isDebt) ? "Remember that money you borrow!" : "Remember that money you lent!"
-        content.categoryIdentifier = when.description
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: when.timeIntervalSinceNow, repeats: false)
-        let request = UNNotificationRequest(
-            identifier: op.createdAt.description, content: content, trigger: trigger
-        )
-        
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-    }
     
-  
+    
+    
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return -20
@@ -250,6 +224,6 @@ class EditOperationViewController: FormViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-
+    
+    
 }

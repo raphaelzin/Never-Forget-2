@@ -12,21 +12,13 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UIViewControllerInteractiveTransitioning {
     
-    
-    public func startInteractiveTransition(_ transitionContext: UIViewControllerContextTransitioning) {
-        return
-    }
-
-
     @IBOutlet var tableView: UITableView!
     @IBOutlet var addButton: UIButton!
     
-    var noOperations:UILabel!
-    
-    let db:Database = Database()
-
     let customInteractionController = CustomInteractionController()
     let customNavigationAnimationController = SlideUp()
+    let db:Database = Database()
+    var noOperations:UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +34,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         addButton.titleLabel?.font = UIFont(name: "AvenirNextCondensed-DemiBold", size: 24)
         addButton.setTitle("Add", for: .normal)
         addButton.setTitleColor(UIColor(red: 0, green: 210/255, blue: 255/255, alpha: 1), for: .normal)
-
+        
         addButton.layer.shadowRadius = 6
         addButton.layer.shadowColor = UIColor.black.cgColor
         addButton.layer.shadowOffset = CGSize(width: 0, height: 2)
@@ -114,17 +106,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    func reloadData()
-    {
-        tableView.reloadData()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
+    //MARK: Navigation Controller Methods
     
-    
+    public func startInteractiveTransition(_ transitionContext: UIViewControllerContextTransitioning) {
+        return
+    }
     
     func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         return customInteractionController.transitionInProgress ? customInteractionController : nil
@@ -139,7 +125,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         return customNavigationAnimationController
     }
-
+    
+    //MARK: TablewView methods
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if section == 0 && db.getOperations().filter("isPaid == false").count > 0
@@ -160,7 +148,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         return 1
     }
-
+    
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let op = db.getOperations()[indexPath.row]
@@ -201,7 +189,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.userName.text = (db.getUserName() == nil) ? "" : Utils.getFirstName(fullName: db.getUserName()!)
         cell.contactName.text = (db.getContactForID(id: op.hisID) != nil) ? Utils.getFirstName(fullName: (db.getContactForID(id: op.hisID)?.name)!) : ""
         cell.userImage.image = (db.getUserPicture() != nil) ? db.getUserPicture() : UIImage(named: "userDefault")
-
+        
         if !op.isDebt { cell.arrowImage.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI)); }
         
         if db.getContactForID(id: op.hisID) != nil && UIImage(data: db.getContactForID(id: op.hisID)?.image as! Data) != nil
@@ -244,7 +232,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 34
     }
-
+    
+    func reloadData()
+    {
+        tableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         
         let header = view as! UITableViewHeaderFooterView
@@ -284,4 +277,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
         }
     }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
 }

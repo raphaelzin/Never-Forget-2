@@ -14,12 +14,55 @@ class Database: NSObject {
     
     var operations : Results<Operation>!
     
+    // MARK: User Methods
     
     func getUserName() -> String?
     {
         if uiRealm.objects(User.self).count != 0
         {
             return uiRealm.objects(User.self)[0].name
+        }
+        else
+        {
+            return nil
+        }
+    }
+    
+    func setUserName(name:String)
+    {
+        let users = uiRealm.objects(User.self)
+        if users.count == 0 { initiateUser() }
+        do
+        {
+            try uiRealm.write { () -> Void in
+                uiRealm.objects(User.self)[0].name = name
+            }
+        }catch
+        {
+            print("Could not set name")
+        }
+    }
+    
+    func setUserPicture(picData:UIImage)
+    {
+        let users = uiRealm.objects(User.self)
+        if users.count == 0 { initiateUser() }
+        do
+        {
+            try uiRealm.write { () -> Void in
+                uiRealm.objects(User.self)[0].image = UIImagePNGRepresentation(picData)! as NSData
+            }
+        }catch
+        {
+            print("Could not set Picture")
+        }
+    }
+    
+    func getUserPicture()->UIImage?
+    {
+        if uiRealm.objects(User.self).count != 0
+        {
+            return UIImage(data: uiRealm.objects(User.self)[0].image as Data)
         }
         else
         {
@@ -43,36 +86,7 @@ class Database: NSObject {
         }
     }
     
-    func setUserName(name:String)
-    {
-        let users = uiRealm.objects(User.self)
-        if users.count == 0 { initiateUser() }
-        do
-        {
-            try uiRealm.write { () -> Void in
-                uiRealm.objects(User.self)[0].name = name
-            }
-        }catch
-        {
-            print("Could not set name")
-        }
-    }
-    
-    func setUserPicture(picData:UIImage)
-    {
-        //##########################################################
-        let users = uiRealm.objects(User.self)
-        if users.count == 0 { initiateUser() }
-        do
-        {
-            try uiRealm.write { () -> Void in
-                uiRealm.objects(User.self)[0].image = UIImagePNGRepresentation(picData)! as NSData
-            }
-        }catch
-        {
-            print("Could not set Picture")
-        }
-    }
+    // MARK: Contact Methods
     
     func setContactPicture(contact:Contact, image:UIImage)
     {
@@ -87,66 +101,18 @@ class Database: NSObject {
         }
     }
     
-    func getUserPicture()->UIImage?
-    {
-        if uiRealm.objects(User.self).count != 0
-        {
-            return UIImage(data: uiRealm.objects(User.self)[0].image as Data)
-        }
-        else
-        {
-            return nil
-        }
-    }
-    
-    func deleteContact(contact:Contact)
+    func setContactName(contact:Contact, name:String)
     {
         do
         {
-            
-            try uiRealm.write({ () -> Void in
-                uiRealm.delete(contact)
-            })
-        }
-        catch
+            try uiRealm.write { () -> Void in
+                contact.name = name
+            }
+        }catch
         {
-            print("Can't Delete Contact")
+            print("Could not save Operation")
         }
-    }
-    
-    func deleteOperation(op:Operation)
-    {
-        do
-        {
-            
-            try uiRealm.write({ () -> Void in
-                uiRealm.delete(op)
-            })
-        }
-        catch
-        {
-            print("Can't Delete Operation")
-        }
-    }
-    
-    func mkID()->Int
-    {
-        if UserDefaults.standard.value(forKey: "ids") == nil
-        {
-            UserDefaults.standard.set(0, forKey: "ids")
-            return 0
-        }
-        else
-        {
-            let id = UserDefaults.standard.value(forKey: "ids") as! Int
-            UserDefaults.standard.set(id+1, forKey: "ids")
-            return id+1
-        }
-    }
-    
-    func getOperations()->Results<Operation>
-    {
-        return uiRealm.objects(Operation.self)
+        
     }
     
     func getContacts()->Results<Contact>
@@ -202,7 +168,63 @@ class Database: NSObject {
             print("Could not save Operation")
         }
     }
-
+    
+    
+    func deleteContact(contact:Contact)
+    {
+        do
+        {
+            
+            try uiRealm.write({ () -> Void in
+                uiRealm.delete(contact)
+            })
+        }
+        catch
+        {
+            print("Can't Delete Contact")
+        }
+    }
+    
+    func mkID()->Int
+    {
+        if UserDefaults.standard.value(forKey: "ids") == nil
+        {
+            UserDefaults.standard.set(0, forKey: "ids")
+            return 0
+        }
+        else
+        {
+            let id = UserDefaults.standard.value(forKey: "ids") as! Int
+            UserDefaults.standard.set(id+1, forKey: "ids")
+            return id+1
+        }
+    }
+    
+    
+    // MARK: Operation Methods
+    
+    func deleteOperation(op:Operation)
+    {
+        do
+        {
+            
+            try uiRealm.write({ () -> Void in
+                uiRealm.delete(op)
+            })
+        }
+        catch
+        {
+            print("Can't Delete Operation")
+        }
+    }
+    
+    
+    func getOperations()->Results<Operation>
+    {
+        return uiRealm.objects(Operation.self)
+    }
+    
+    
     func addOperation(newOperation:Operation)
     {
         do
@@ -237,7 +259,7 @@ class Database: NSObject {
             }
         }
         return total
-
+        
     }
     
     func get(type:String)->Double
@@ -262,10 +284,36 @@ class Database: NSObject {
         }
         return total
     }
+    
+    func switchPaid(operation:Operation)
+    {
+        do
+        {
+            try uiRealm.write({ () -> Void in
+                operation.isPaid = !operation.isPaid
+            })
+        }
+        catch
+        {
+            print("nops")
+        }
+    }
+    
+    func editOperation(operation:Operation, editTo:Operation)
+    {
+        do
+        {
+            try uiRealm.write { () -> Void in
+                operation.amount = editTo.amount
+                operation.hisID = editTo.hisID
+                operation.details = editTo.details
+                operation.notifyAt = editTo.notifyAt
+                operation.isDebt = editTo.isDebt
+            }
+        }catch
+        {
+            print("Could not update Operation")
+        }
+    }
 }
 
-class User: Object
-{
-    dynamic var image = NSData()
-    dynamic var name = ""
-}

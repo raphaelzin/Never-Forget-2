@@ -129,16 +129,7 @@ class DetailsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func switcher()
     {
-        do
-        {
-            try uiRealm.write({ () -> Void in
-                op.isPaid = !op.isPaid
-            })
-        }
-        catch
-        {
-            print("nops")
-        }
+        db.switchPaid(operation: op)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
