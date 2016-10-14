@@ -29,6 +29,23 @@ public extension UIFont
     }
 }
 
+extension UIImage {
+    func urlOf(name:String) -> URL? {
+        do {
+            let imageData = UIImagePNGRepresentation(self)
+            let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+            let documentDirectory = paths[0] as String
+            let myFilePath = NSURL(fileURLWithPath: documentDirectory).appendingPathComponent(name)
+            try imageData?.write(to: myFilePath!, options: .atomicWrite)
+            let url = myFilePath! as URL
+            return url
+        } catch {
+            NSLog("Could not save image to local directory!")
+            return nil
+        }
+    }
+}
+
 class Utils
 {
     static func scheduleNotification(operation:Operation)

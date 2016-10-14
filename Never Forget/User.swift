@@ -13,4 +13,5 @@ class User: Object
 {
     dynamic var name = ""
     dynamic var image = NSData()
+    dynamic var createdAt = NSDate()
 }

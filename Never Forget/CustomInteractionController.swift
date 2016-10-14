@@ -21,6 +21,7 @@ class CustomInteractionController: UIPercentDrivenInteractiveTransition {
     func attachToViewController(viewController: UIViewController) {
         navigationController = viewController.navigationController
         setupGestureRecognizer(view: navigationController.navigationBar)
+        setupGestureRecognizer(view: viewController.view)
     }
     
     private func setupGestureRecognizer(view: UIView) {

@@ -8,13 +8,21 @@
 
 import Foundation
 import RealmSwift
-
+import CloudKit
 
 class Database: NSObject {
     
     var operations : Results<Operation>!
-    
+    var ckdb = CloudKitDatabase()
     // MARK: User Methods
+    
+    override init()
+    {
+        super.init()
+        let notificationName = Notification.Name("initUser")
+        NotificationCenter.default.addObserver(self, selector: #selector(Database.initiateUser), name: notificationName, object: nil)
+    }
+    
     
     func getUserName() -> String?
     {
@@ -30,6 +38,7 @@ class Database: NSObject {
     
     func setUserName(name:String)
     {
+        
         let users = uiRealm.objects(User.self)
         if users.count == 0 { initiateUser() }
         do
@@ -41,6 +50,9 @@ class Database: NSObject {
         {
             print("Could not set name")
         }
+        print("Has cloud user? \(ckdb.hasCloudUser())")
+        ckdb.setUserName(name: name, user: users[0])
+        
     }
     
     func setUserPicture(picData:UIImage)
@@ -56,6 +68,7 @@ class Database: NSObject {
         {
             print("Could not set Picture")
         }
+        ckdb.setUserPicture(user: users[0], image: picData)
     }
     
     func getUserPicture()->UIImage?
@@ -72,9 +85,24 @@ class Database: NSObject {
     
     func initiateUser()
     {
+        
+        
         let user = User()
         user.name = ""
         user.image = NSData()
+
+        
+        
+//        if ckdb.hasCloudUser()
+//        {
+        user.name = ckdb.getUserName()
+        user.createdAt = ckdb.getUserCreatedDate()
+//        }
+//        else
+//        {
+//            ckdb.initiateCKUser(user: user)
+//        }
+        
         do
         {
             try uiRealm.write { () -> Void in
@@ -84,6 +112,7 @@ class Database: NSObject {
         {
             print("Could not save User")
         }
+        
     }
     
     // MARK: Contact Methods
@@ -236,6 +265,23 @@ class Database: NSObject {
         {
             print("Could not save Operation")
         }
+        
+        
+        let timestampAsString = String(format: "%f", newOperation.createdAt.timeIntervalSinceReferenceDate)
+        let timestampParts = timestampAsString.components(separatedBy: ".")
+        
+        let userID = CKRecordID(recordName: timestampParts[0])
+        let ckUser = CKRecord(recordType: "Operation", recordID: userID)
+        
+        ckUser.setObject(newOperation.amount as CKRecordValue?, forKey: "amount")
+        ckUser.setObject(newOperation.createdAt as CKRecordValue?, forKey: "createdAt")
+        ckUser.setObject(newOperation.details as CKRecordValue?, forKey: "details")
+        ckUser.setObject(newOperation.hisID as CKRecordValue?, forKey: "hisID")
+        ckUser.setObject(newOperation.isDebt as CKRecordValue?, forKey: "isDebt")
+        ckUser.setObject(newOperation.isPaid as CKRecordValue?, forKey: "isPaid")
+        ckUser.setObject(newOperation.notifyAt as CKRecordValue?, forKey: "notifyAt")
+        ckUser.setObject(newOperation.when as CKRecordValue?, forKey: "when")
+
     }
     
     

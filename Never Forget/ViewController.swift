@@ -22,6 +22,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
+        db.ckdb.hasCloudUser()
+//        if !
+//        {
+//            db.initiateUser()
+//        }
         
         self.title = "Main"
         
